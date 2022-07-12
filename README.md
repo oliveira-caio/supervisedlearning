@@ -10,7 +10,7 @@ In order to learn, we define the following cost function that we want to minimiz
 $$C(w, b) = \frac{1}{2|D|}\sum_{i=1}^{|D|} (f(w, b, x^{(i)}) - y^{(i)})^2.$$
 Now, to minimize this function, we use the Gradient Descent algorithm, which basically says that, given some parameters $(w, b)$, the direction that minimizes the function $C(w, b)$ is given by $-\text{grad}C(w, b)$ and, therefore, the new point $(w_+, b_+) = (w, b) - \text{grad}C(w, b)$ is closer to the minimum of $C$.
 There is a caveat to this formula, though.
-In practice we update the point by doing $(w, b) - \alpha\text{grad}C(w, b)$, for $\alpha > 0$, because, although the gradient gives the right direction, it not necessarily gives the right size of the step.
-Therefore, according to the function you want to minimize, you want $\alpha$ small or big.
+In practice we update the point by doing $(w, b) - \alpha \cdot \text{grad}C(w, b)$, for $\alpha > 0$, because, although the gradient gives the right direction, it not necessarily gives the right size of the step.
+Therefore, you have to choose $\alpha$ small or big according to the function you want to minimize.
 $\alpha$ is called *learning rate* and in this case I hardcoded $\alpha = 0.35$, but there are more robust ways of finding $\alpha$ (see [here](https://en.wikipedia.org/wiki/Gradient_descent)).
 The algorithm for a very simple dataset is in the directory *week_one*.

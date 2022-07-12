@@ -18,7 +18,7 @@ def gradient_descent(grad_F, initial, n_iter=1000, learning_rate=0.35):
     for i in range(n_iter):
         new = prev - learning_rate*grad_F(*prev)
         if np.linalg.norm(grad_F(*new)) < tol:
-            print(f'Converged to ({new[0]}, {new[1]}) in {i} iterations.')
+            print(f'Converged to {new} in {i} iterations.')
             return
         prev = new
     raise Exception('Didn\'t converge.')
